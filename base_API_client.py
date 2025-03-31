@@ -8,6 +8,9 @@ class BaseAPIClient(ABC):
         pass
 
     @abstractmethod
-    def parse_response(self, response):
-        """Parse and standardize the API response."""
+    def parse_response(self, response_package):
+        """Parse and standardize the API response.
+           Returns a tuple: (results, gathered_features)
+        """
         pass
+    
