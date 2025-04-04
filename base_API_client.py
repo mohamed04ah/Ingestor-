@@ -1,5 +1,6 @@
 # base_api_client.py
 from abc import ABC, abstractmethod
+import pandas as pd
 
 class BaseAPIClient(ABC):
     @abstractmethod
@@ -11,6 +12,16 @@ class BaseAPIClient(ABC):
     def parse_response(self, response_package):
         """Parse and standardize the API response.
            Returns a tuple: (results, gathered_features)
+        """
+        pass
+    
+    
+    @abstractmethod
+    def compute_statistics(self, df: pd.DataFrame) -> dict:
+        """
+        Compute statistics on the DataFrame.
+        Returns a dictionary with computed metrics (e.g. descriptive stats, missing values, etc.)
+        The implementation can be customized per API client.
         """
         pass
     
