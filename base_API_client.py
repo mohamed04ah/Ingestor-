@@ -1,6 +1,8 @@
 # base_api_client.py
 from abc import ABC, abstractmethod
 import pandas as pd
+from typing import Dict, Any
+
 
 class BaseAPIClient(ABC):
     @abstractmethod
@@ -16,12 +18,12 @@ class BaseAPIClient(ABC):
         pass
     
     
-    @abstractmethod
-    def compute_statistics(self, df: pd.DataFrame) -> dict:
-        """
-        Compute statistics on the DataFrame.
-        Returns a dictionary with computed metrics (e.g. descriptive stats, missing values, etc.)
-        The implementation can be customized per API client.
-        """
-        pass
+    # @abstractmethod
+    # def compute_statistics(self, df: pd.DataFrame) -> Dict[str, Any]:
+    #     """
+    #     Compute statistics on the DataFrame.
+    #     Returns a dictionary with computed metrics (e.g. descriptive stats, missing values, etc.)
+    #     The implementation can be customized per API client.
+    #     """
+    #     pass
     
